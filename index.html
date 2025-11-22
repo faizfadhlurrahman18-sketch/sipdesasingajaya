@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Informasi Pertanahan Desa Singajaya</title>
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="logo">
+                <span class="logo-icon">
+                    <img src="logodesa.png" alt="Logo Desa Singajaya" class="logo-desa-inside" />
+                </span>
+                <span class="logo-title">Sistem Informasi Pertanahan Desa Singajaya</span>
+            </div>
+            <nav>
+                <a href="#" class="active">Home</a>
+                <a href="#">Profile</a>
+                <a href="#">Peta</a>
+            </nav>
+        </div>
+    </header>
+    <div class="video-section">
+        <video class="video-normal" src="singajaya.mp4" autoplay loop muted playsinline></video>
+        <div class="video-overlay"></div>
+    </div>
+    <div class="section-gap">
+        <div class="section-gap-inner" style="animation: fadeInUp 0.9s cubic-bezier(.23,1.02,.32,1) both; text-align:center;">
+            <h2>Selamat Datang di Sistem Informasi Pertanahan Desa Singajaya</h2>
+            <p>
+                Temukan informasi pertanahan, berita terbaru, dan layanan digital desa secara mudah, transparan, dan modern.<br>
+                <span class="highlight">Bersama membangun desa yang tertata dan informatif.</span>
+            </p>
+            <div class="cta-buttons">
+                <a href="peta.html" class="cta-btn cta-btn-primary">Buka Peta Digital</a>
+                <a href="panduan.html" class="cta-btn cta-btn-primary">Panduan Layanan</a>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="berita">
+            <img class="berita-img" src="berita1.jpeg" alt="Pemetaan Tanah">
+            <div class="berita-content">
+                <h3>Pemdes Singajaya Rampungkan Pemetaan Tanah Warga Tahun 2025</h3>
+                <p>Proses pendataan dan pemetaan bidang tanah warga telah selesai dilakukan sebagai dasar legalitas pertanahan.</p>
+            </div>
+        </div>
+        <div class="berita">
+            <img class="berita-img" src="berita2.jpeg" alt="PTSL Tahap II">
+            <div class="berita-content">
+                <h3>Sertifikasi Tanah Program PTSL Tahap II Resmi Dimulai</h3>
+                <p>Pemerintah Desa Singajaya bekerja sama dengan BPN memulai tahap kedua program Pendaftaran Tanah Sistematis Lengkap (PTSL).</p>
+            </div>
+        </div>
+        <div class="berita">
+            <img class="berita-img" src="berita3.jpeg" alt="Sosialisasi Hak Tanah">
+            <div class="berita-content">
+                <h3>Sosialisasi Hak dan Status Tanah Digelar untuk Warga Singajaya</h3>
+                <p>Warga diberikan pemahaman tentang hak milik, girik, dan status tanah lainnya dalam forum terbuka di balai desa.</p>
+            </div>
+        </div>
+        <div class="berita">
+            <img class="berita-img" src="berita4.jpeg" alt="Digitalisasi Arsip">
+            <div class="berita-content">
+                <h3>Digitalisasi Arsip Pertanahan: Desa Singajaya Menuju Transparansi Data</h3>
+                <p>Desa Singajaya melakukan digitalisasi arsip pertanahan sebagai langkah menuju transparansi dan kemudahan akses data.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-separator"></div>
+            <div style="font-weight:600; font-size:1.05rem; letter-spacing:0.1px; margin-bottom:2px;">Alamat</div>
+            <div style="font-size:0.97rem; opacity:0.92; margin-bottom:2px;">Jl. Rawa Mamur No.21 RT 002 RW 002 Desa Singajaya Kecamatan Jonggol Kabupaten Bogor Kode Pos 16830</div>
+            <!-- Peta Lokasi Kantor Desa -->
+            <div id="map"></div>
+            <div class="sosmed">
+                <!-- Facebook -->
+                <a href="https://facebook.com" target="_blank" title="Facebook" aria-label="Facebook">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 5.005 3.657 9.128 8.438 9.877v-6.987h-2.54v-2.89h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.632.771-1.632 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.343 21.128 22 17.005 22 12"></path></svg>
+                </a>
+                <span style="margin-right:8px; font-size:0.98rem; font-weight:500;">Desa Singajaya</span>
+                <!-- Instagram -->
+                <a href="https://instagram.com" target="_blank" title="Instagram" aria-label="Instagram">
+                    <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-2.25a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0z"/>
+                    </svg>
+                </a>
+                <span style="margin:0 8px 0 18px; font-size:0.98rem; font-weight:500;">desa.singajaya_kec.jonggol</span>
+                <!-- Twitter -->
+                <a href="https://twitter.com" target="_blank" title="Twitter" aria-label="Twitter">
+                    <svg class="icon-twitter" viewBox="0 0 24 24"><path d="M24 4.557a9.83 9.83 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724c-.951.564-2.005.974-3.127 1.195a4.916 4.916 0 0 0-8.38 4.482C7.691 8.095 4.066 6.13 1.64 3.161c-.542.929-.856 2.01-.857 3.17 0 2.188 1.115 4.117 2.823 5.254a4.904 4.904 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.936 4.936 0 0 1-2.224.084c.627 1.956 2.444 3.377 4.6 3.417A9.867 9.867 0 0 1 0 21.543a13.94 13.94 0 0 0 7.548 2.209c9.058 0 14.009-7.513 14.009-14.009 0-.213-.005-.425-.014-.636A10.012 10.012 0 0 0 24 4.557z"/></svg>
+                </a>
+                <span style="margin:0 8px 0 18px; font-size:0.98rem; font-weight:500;">ds.singajaya</span>
+            </div>
+            
+        </div>
+    </footer>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6281234567890?text=Halo%20Operator%20Desa%20Singajaya%2C%20saya%20ingin%20bertanya%20tentang%20pertanahan." class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp Operator Desa">
+        <img src="wa.png" alt="WhatsApp" style="vertical-align:middle; border-radius:50%; background:#25D366; width:48px; height:48px; object-fit:cover;" />
+        <span class="wa-float-text">Pengaduan</span>
+    </a>
+    <!-- End Floating WhatsApp Button -->
+    <!-- JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="script.js"></script>
+</body>
+</html>
